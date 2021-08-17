@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
-//import { useDispatch, useSelector } from 'react-redux'
-//import { startRegisterUser } from '../../actions/userActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { startRegisterUser } from '../../actions/userActions'
 
 const UserRegister = (props) => {
     const [isRegistered, setIsRegistered] = useState(false)
-    //const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-   // const userData = useSelector((state) => {
-       // return state.user
-   // })
+    const userData = useSelector((state) => {
+        return state.user
+    })
 
     useEffect(() => {
         if (isRegistered) {
@@ -44,7 +44,7 @@ const UserRegister = (props) => {
         console.log(values)
         setIsRegistered(true)
         onSubmitProps.resetForm()
-       // dispatch(startRegisterUser(values))
+        dispatch(startRegisterUser(values))
     }
 
     return (

@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form } from 'formik'
 import * as Yup from 'yup'
-//import { useDispatch, useSelector } from 'react-redux'
-//import { startLoginUser } from '../../actions/userActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { startLoginUser } from '../../actions/userActions'
 
 const Login = (props) => {
     const [isSubmitted, setIsSubmitted] = useState(false)
     const { userAuth } = props
-    //const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-    //const userLogin = useSelector((state) => {
-        //return state.user
-  //  })
+    const userLogin = useSelector((state) => {
+        return state.user
+    })
 
     useEffect(() => {
         if (isSubmitted) {
             userAuth()
             props.history.push('/dashboard')
         }
-    })
+    }, [userLogin])
 
     const initialValues = {
         email: '',
@@ -36,7 +36,7 @@ const Login = (props) => {
     const handleSubmit = (values, onSubmitProps) => {
         //console.log(values)
         setIsSubmitted(true)
-       // dispatch(startLoginUser(values))
+        dispatch(startLoginUser(values))
         onSubmitProps.resetForm()
     }
 

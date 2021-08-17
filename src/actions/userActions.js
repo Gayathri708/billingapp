@@ -50,3 +50,26 @@ export const setLoginUser=(data)=>{
         payload : data
     }
 }
+
+export const startGetUserDetails = ()=>{
+    return (dispatch)=>{
+        axios.get('https://dct-billing-app.herokuapp.com/api/users/account',{
+            headers : {
+                'Authorization' : `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+        .then((response)=>{
+            //console.log(response.data)
+            dispatch(setUserDetails(response.data))
+        })
+        .catch((err)=>{
+            swal(err.message)
+        })
+    }
+}
+export const setUserDetails = (data)=>{
+    return {
+        type: 'GET_DETAILS',
+        payload: data
+    }
+}

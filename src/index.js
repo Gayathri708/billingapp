@@ -5,9 +5,10 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
 import {Provider} from 'react-redux'
 
-
+console.log("store---------e")
 const store=configureStore()
-console.log("store")
+console.log(store)
+//console.log("store---------e")
  console.log(store.getState())
 
 store.subscribe(()=>{
