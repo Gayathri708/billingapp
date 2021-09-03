@@ -53,7 +53,7 @@ const BillContainer = (props) => {
                     </div>
                 )
             }
-                            {
+{
                     bills.length > 0 ? (
                         <BillList handleInvoice={handleInvoice} />
                     ) : (
@@ -62,6 +62,22 @@ const BillContainer = (props) => {
                         </div>
                     )
                 }
+                {
+                    toggle && Object.keys(billData).length > 0 && (
+                        <div>
+                            <Modal show={toggle} onHide={handleClose} animation={false}>
+                                <Modal.Body>
+                                    <Invoice handleToggle={handleToggle} className="container" billData={billData} />
+                                    {<ViewBillData billData={billData} /> }
+                                </Modal.Body>
+                                {<Modal.Footer>
+                                    <Button className='btn btn-sm btn-primary' onClick={handleClose}>Close</Button>
+                                </Modal.Footer> }
+                            </Modal>
+                        </div>
+                    )
+                }
+
  
 
             <hr />

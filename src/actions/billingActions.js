@@ -158,7 +158,7 @@ export const startAddProductData = (data) => {
                 if (response.data.hasOwnProperty('errors')) {
                     swal(response.data.message)
                 } else {
-                    console.log('it is from correct condition----n')
+                   // console.log('it is from correct condition----n')
                     swal('New product added to the list')
                    dispatch(addProduct(response.data))
                 }

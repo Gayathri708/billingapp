@@ -10,9 +10,9 @@ function App() {
 
   useEffect(()=>{
     if(localStorage.getItem('token')){
-     // userAuth()
+      userAuth()
     }
-  })
+  },[])
 
   return (
     <div className="container">

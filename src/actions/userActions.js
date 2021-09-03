@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios'//store the data in api
 import swal from 'sweetalert'
 
 export const startRegisterUser = (userData)=>{

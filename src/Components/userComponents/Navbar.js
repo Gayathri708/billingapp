@@ -3,12 +3,12 @@ import { Link, Route, withRouter } from 'react-router-dom'
 import Home from './Home'
 import UserRegister from './UserRegister'
 import Login from './Login'
-//import Dashboard from '../billingComponents/Dashboard'
+import Dashboard from '../billingComponents/Dashboard'
 import CustomersContainer from '../billingComponents/customers/CustomersContainer'
 import ProductsContainer from '../billingComponents/products/ProductsContainer'
 import { Form } from 'formik'
 import BillContainer from '../billingComponents/billing/BillContainer'
-//import UserAccount from '../billingComponents/UserAccount'
+import UserAccount from '../billingComponents/UserAccount'
 console.log('products-----s')
 console.log(ProductsContainer)
 console.log('form------s')
@@ -23,9 +23,12 @@ const Navbar = (props) => {
                 userLoggedIn ? (
                     <div>
                         <div className="nav justify-content-end mt-4">
+                        <Link to="/profile" className="nav-link">Profile</Link>
+                        <Link to="/dashboard" className="nav-link">Dashboard</Link>
                            <Link to="/products" className="nav-link">     Products   </Link>
                            <Link to="/customers" className="nav-link">      Customers   </Link>
                            <Link to="/bills" className="nav-link">Billing</Link>
+                           
 
                             <Link onClick={() => {
                                 const confirm = window.confirm('are you sure?')
@@ -57,6 +60,8 @@ const Navbar = (props) => {
             <Route path='/products' component={ProductsContainer} exact={true} />
             <Route path='/customers' component={CustomersContainer} exact={true} />
             <Route path='/bills' component={BillContainer} exact={true} />
+            <Route path='/dashboard' component={Dashboard} exact={true} />
+            <Route path="/profile" component={UserAccount} exact={true} />
 
         </div>
     )
