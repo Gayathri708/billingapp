@@ -8,6 +8,7 @@ const intialState = {
     cart:[],
     singleBill:{}
 }
+//state.details.cart
 
 const billingReducer = (state=intialState,action)=>{
     switch(action.type){

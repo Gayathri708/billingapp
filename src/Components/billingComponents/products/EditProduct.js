@@ -13,7 +13,7 @@ const EditProduct = (props) => {
     }
     const dispatch = useDispatch()
 
-    const validationSchema = () => {
+    const validationSchema = () => {      
         const validate = Yup.object({
             name: Yup.string(),
             price: Yup.number()

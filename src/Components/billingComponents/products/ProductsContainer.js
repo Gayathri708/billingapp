@@ -15,7 +15,7 @@ const ProductsContainer = (props) => {
     })
     useEffect(() => {
        dispatch(startGetAllProducts())
-    }, [productData])
+    }, [productData])//to avoid rerender
 
     const handleToggle = (value) => {
         setToggle(value)
@@ -40,7 +40,7 @@ const ProductsContainer = (props) => {
                     </div>
                 ) : (
                     <div className="col-md-5">
-                        <h1 className="col-md-6">Add Product</h1>
+                        <h1 className="col-md-6"> Add Product </h1>
                         <ProductForm />
                     </div>
                 )

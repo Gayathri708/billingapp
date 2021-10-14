@@ -19,7 +19,8 @@ const Cart = () => {
     useEffect(() => {
         dispatch(getBillCustomerData())
         dispatch(getCartItems())
-    }, [])
+    }, [])                                                                                                                                                                          
+    
 
     const increment = (id) => {
         return cart.map((ele) => {

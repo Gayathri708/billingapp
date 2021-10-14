@@ -83,6 +83,7 @@ const BillProduct = (props) => {
                         <input
                             type='submit'
                             value='Add to Cart'
+
                             className="btn btn-primary btn-sm mx-sm-3 mb-2"
                         />
                     </div>

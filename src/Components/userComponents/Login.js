@@ -34,7 +34,7 @@ const Login = (props) => {
     })
 
     const handleSubmit = (values, onSubmitProps) => {
-        //console.log(values)
+        console.log(values)
         setIsSubmitted(true)
         dispatch(startLoginUser(values))
         onSubmitProps.resetForm()
